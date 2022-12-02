@@ -63,18 +63,43 @@ A version of this program will be used to test your implementations, although th
 
 3 Extension features The remaining marks are distributed across the extension features. 
 You may implement as many as you wish. Assume about 40% of each extension’s marks will be based on any documentation. 
-The following extensions allow you to demonstrate more knowledge and in return are work additional marks indicated. If you have implemented any of these then the string BASIC sent after synchronisation must be replaced by a list of the extension names separated by commas and followed by a new line. For example: RECENT,FREERAM,HCI,SCROLL,EEPROM,UDCHARS
+The following extensions allow you to demonstrate more knowledge and in return are work additional marks indicated. 
+If you have implemented any of these then the string BASIC sent after synchronisation must be replaced by a list of the extension names separated by commas and followed by a new line. 
+For example: RECENT,FREERAM,HCI,SCROLL,EEPROM,UDCHARS
 
-3.1 UDCHARS This shows your ability to define your own character forms. [5 marks] • Define some characters to replace the v and ˆ with nicer looking arrows. • In your documentation indicate which lines of the code define the characters.
+3.1 UDCHARS This shows your ability to define your own character forms. [5 marks] 
+• Define some characters to replace the v and ˆ with nicer looking arrows. 
+• In your documentation indicate which lines of the code define the characters.
 
-3.2 FREERAM This show your ability to read the free SRAM in an Arduino. [5 marks] • Modify what happens when pressing the SELECT button. In addition to the ID number, display the amount of free SRAM. • In your documentation indicate the parts of the code to display the free SRAM.
+3.2 FREERAM This show your ability to read the free SRAM in an Arduino. [5 marks]
+• Modify what happens when pressing the SELECT button. In addition to the ID number, display the amount of free SRAM.
+• In your documentation indicate the parts of the code to display the free SRAM.
 
-3.3 HCI This shows your ability to select particular values from an array of values. [5 marks] • When the user presses and releases the RIGHT button the display must only display channels where the current value is beyond the maximum. (changed for v2) If none match this criterion, then display nothing. • When the user presses and releases the LEFT button the display must only display channels where the current value is beyond the minimum. • If in either of the above two states repressing and releasing the same button returns to displaying all the channels. • If no channels match the criteria, then nothing should be shown. The v and ˆ arrows should appear based on the subset of channels to display. • In your documentation show the lines of code and thinking behind the mechanism to display subsets of the list of channels.
+3.3 HCI This shows your ability to select particular values from an array of values. [5 marks]
+• When the user presses and releases the RIGHT button the display must only display channels where the current value is beyond the maximum.
+(changed for v2) If none match this criterion, then display nothing.
+• When the user presses and releases the LEFT button the display must only display channels where the current value is beyond the minimum.
+• If in either of the above two states repressing and releasing the same button returns to displaying all the channels.
+• If no channels match the criteria, then nothing should be shown. The v and ˆ arrows should appear based on the subset of channels to display.
+• In your documentation show the lines of code and thinking behind the mechanism to display subsets of the list of channels.
 
-3.4 EEPROM This shows your ability read/write from EEPROM. [5 marks] • Store the channel letters and descriptions with their maximum and minimum values in the EEPROM so that they can survive power resets. • Read from the EEPROM on startup and find a mechanism for determining whether the values where written by you or simply left from before. – (new for v2) After restarting until a value is received on a particular channel you MUST not include that channel in the maximum and minimum operations. • In your documentation indicate how you lay out the use of the EEPROM and which lines of code and functions you use to store the information.
+3.4 EEPROM This shows your ability read/write from EEPROM. [5 marks]
+• Store the channel letters and descriptions with their maximum and minimum values in the EEPROM so that they can survive power resets.
+• Read from the EEPROM on startup and find a mechanism for determining whether the values where written by you or simply left from before.
+– (new for v2) After restarting until a value is received on a particular channel you MUST not include that channel in the maximum and minimum operations.
+• In your documentation indicate how you lay out the use of the EEPROM and which lines of code and functions you use to store the information.
 
-3.5 RECENT This shows your ability to manage larger data sets than single values. [15 marks] • Store the most recent 64 values and display the average of these as well as the most recent value on the screen. Keep to the format below: +----------------+ |ˆ1XXX,AVG | |v2YYY,AVG | +----------------+ Average is to be rounded to the nearest integer value. • In your documentation indicate the names and locations of the data structures used to store the recent values.
+3.5 RECENT This shows your ability to manage larger data sets than single values. [15 marks]
+• Store the most recent 64 values and display the average of these as well as the most recent value on the screen.
+Keep to the format below: +----------------+ |ˆ1XXX,AVG | |v2YYY,AVG | +----------------+ Average is to be rounded to the nearest integer value.
+• In your documentation indicate the names and locations of the data structures used to store the recent values.
 
-3.6 NAMES This shows your ability to store and display other text. [5 marks] • Display the channel names to the right of the values using the remaining available space. +----------------+ |ˆ1XXX Main | |v2YYY Secondary | +----------------+ or if you have implemented RECENT +----------------+ |ˆAXXX,AVG Main | |vBYYY,AVG Second| <--- note name is truncated +----------------+ • In your documentation indicate the data structure you use to store the channel name and how it is printed to the display.
+3.6 NAMES This shows your ability to store and display other text. [5 marks]
+• Display the channel names to the right of the values using the remaining available space.
++----------------+ |ˆ1XXX Main | |v2YYY Secondary | +----------------+ or if you have implemented RECENT +----------------+ |ˆAXXX,AVG Main | |vBYYY,AVG Second| <--- note name is truncated +----------------+ 
+• In your documentation indicate the data structure you use to store the channel name and how it is printed to the display.
 
-3.7 SCROLL This shows your ability to implement a more complicated FSM that can take time into account as well as listening to the Serial Monitor and button presses. [10 marks] • If you have implemented NAMES then when the channel description is too big then add code to scroll it left at 2 characters per second, returning to the start when the full name has been displayed. • All other functionality should remain implemented as described. • In your documentation highlight the parts of the state machine required for this particular requirement and the lines of code and functions that carry this implementation.
+3.7 SCROLL This shows your ability to implement a more complicated FSM that can take time into account as well as listening to the Serial Monitor and button presses. [10 marks]
+• If you have implemented NAMES then when the channel description is too big then add code to scroll it left at 2 characters per second, returning to the start when the full name has been displayed.
+• All other functionality should remain implemented as described. 
+• In your documentation highlight the parts of the state machine required for this particular requirement and the lines of code and functions that carry this implementation.
